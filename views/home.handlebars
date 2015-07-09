@@ -1,0 +1,30 @@
+<h2>Make a Bro</h2>
+<form action="/" method="POST">
+  <input name="name" placeholder="bro's name?">
+  <input name="definitelyBroinItUp" placeholder="is a bro?">
+  <button type="submit">SUBMIT</button>
+</form>
+
+<h2>View Bros</h2>
+{{#each bros}}
+  <div style="overflow: auto;">
+    <div style="float: left;">
+      {{@key}} | {{this.name}} | 
+
+      {{#if definitelyBroinItUp}}
+        BROIN IT UP
+      {{else}}
+        NOT BROIN IT UP
+      {{/if}}
+
+      | <a href="/edit/{{@key}}">edit</a> |
+    </div>
+
+    <form action="/{{@key}}" method="POST" style="float: left; margin-left: 10px;">
+      <input name ="_method" type="hidden" value="DELETE">
+      <button type="submit">delete this</button>
+    </form>
+  </div>
+  <br>
+{{/each}}
+

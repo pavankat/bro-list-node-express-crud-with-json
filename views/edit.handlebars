@@ -1,0 +1,8 @@
+<form action="/update/{{keyToEdit}}" method="POST">
+  <input name ="_method" type="hidden" value="PUT">
+
+  <input name="name" value="{{person.name}}">
+  <input name="definitelyBroinItUp" value="{{person.definitelyBroinItUp}}">
+  <button type="submit">UPDATE</button>
+</form>
+
