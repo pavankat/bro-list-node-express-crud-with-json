@@ -7,8 +7,8 @@
 
 <h2>View Bros</h2>
 {{#each bros}}
-  <div style="overflow: auto;">
-    <div style="float: left;">
+  <div class="fixFloat">
+    <div class="floatLeft">
       {{@key}} | {{this.name}} | 
 
       {{#if definitelyBroinItUp}}
@@ -20,7 +20,7 @@
       | <a href="/edit/{{@key}}">edit</a> |
     </div>
 
-    <form action="/{{@key}}" method="POST" style="float: left; margin-left: 10px;">
+    <form action="/{{@key}}" method="POST" class="floatLeft leftTen">
       <input name ="_method" type="hidden" value="DELETE">
       <button type="submit">delete this</button>
     </form>
